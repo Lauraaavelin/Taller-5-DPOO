@@ -72,8 +72,15 @@ public class Pedido
     {
         return nombreCliente;
     }
+    
 
-    /**
+    public ArrayList<Producto> getProductos() {
+		return productos;
+	}
+
+
+
+	/**
      * Agrega un nuevo producto al pedido
      * @param nuevoProducto El producto que debe agregarse al pedido
      */
@@ -164,4 +171,7 @@ public class Pedido
         out.close( );
     }
 
+    
+    
+    
 }

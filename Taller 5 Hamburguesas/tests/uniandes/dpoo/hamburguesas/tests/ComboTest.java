@@ -18,9 +18,9 @@ class ComboTest {
 
     @BeforeEach
     public void setUp() {
-    	ProductoMenu ing1 = new ProductoMenu("Hmburguesa Sencilla",1000);
-		ProductoMenu ing2 = new ProductoMenu("Papas Medianas",500);
-		ProductoMenu ing3 = new ProductoMenu("Gaseosa",700);
+    	ing1 = new ProductoMenu("Hmburguesa Sencilla",1000);
+		ing2 = new ProductoMenu("Papas Medianas",500);
+		ing3 = new ProductoMenu("Gaseosa",700);
 		
 		ArrayList<ProductoMenu> lista = new ArrayList<>();
 		lista.add(ing3);
