@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import uniandes.dpoo.hamburguesas.mundo.*;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
@@ -103,12 +104,28 @@ class PedidoTest {
 	
 	
 	//TODO TENGO QUE IMPLPEMENTAR ESTE ULTIMO TEST QUE ES EL QUE NO ME CORRE
-	 @Test
-	    public void testGuardarFactura() throws FileNotFoundException {
-	        // Preparar
-	        String f = ped.generarTextoFactura();  // tu clase
-	       
-	    }
+	@Test
+    public void testGuardarFactura() throws FileNotFoundException {
+		Producto proc = new ProductoMenu("Salsa",45);
+		Producto proc2= new ProductoMenu("Agua",2000);
+        ped.agregarProducto(proc);
+        ped.agregarProducto(proc2);
+
+        File archivo = new File("factura_test.txt");
+        ped.guardarFactura(archivo);
+
+        Scanner sc = new Scanner(archivo);
+        String contenido = "";
+        while (sc.hasNextLine()) {
+            contenido += sc.nextLine() + "\n";
+        }
+        sc.close();
+
+        assertTrue(contenido.contains("Cliente: Laura"));
+        assertTrue(contenido.contains("Salsa"));
+        assertTrue(contenido.contains("Agua"));
+        archivo.delete(); 
+    }
 	
 	
 	
