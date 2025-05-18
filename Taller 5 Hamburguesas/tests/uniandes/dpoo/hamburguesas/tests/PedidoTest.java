@@ -5,7 +5,11 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import uniandes.dpoo.hamburguesas.mundo.*;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.*;
+import uniandes.dpoo.hamburguesas.excepciones.*;
 
 
 class PedidoTest {
@@ -95,6 +99,16 @@ class PedidoTest {
 		
 		
 	}
+	
+	
+	
+	//TODO TENGO QUE IMPLPEMENTAR ESTE ULTIMO TEST QUE ES EL QUE NO ME CORRE
+	 @Test
+	    public void testGuardarFactura() throws FileNotFoundException {
+	        // Preparar
+	        String f = ped.generarTextoFactura();  // tu clase
+	       
+	    }
 	
 	
 	
